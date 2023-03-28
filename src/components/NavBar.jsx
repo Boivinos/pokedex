@@ -1,27 +1,17 @@
 import React from 'react';
 
 const NavBar = (props) => {
+    const boutPok = (el) => { props.setPokemon(props.pokemonList.indexOf(el)) }
 
-    const handleClickSuiv = () => {
-        props.setPokemon(props.pokemonInd + 1)
-
-    }
-    const handleClickPrec = () => {
-        props.setPokemon(props.pokemonInd - 1)
-
-    }
-
-    return props.pokemonInd === 0 ?
+    return (
         <div>
-            <button onClick={handleClickSuiv}>Prochain pokemon</button>
-        </div> : props.pokemonInd === props.pokemonList.length - 1 ?
-            <div>
-                <button onClick={handleClickPrec}>Précédent pokemon</button>
-            </div> :
-            <div>
-                <button onClick={handleClickPrec}>Précédent pokemon</button>
-                <button onClick={handleClickSuiv}>Prochain pokemon</button>
-            </div>
-};
+            {props.pokemonList.map((el) => (
+                <button key={el.name} onClick={() => boutPok(el)}>{el.name}</button>
+            ))}
+
+        </div>
+
+    );
+}
 
 export default NavBar;

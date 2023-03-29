@@ -10,27 +10,32 @@ function App() {
 
   const pokemonList = [
     {
-      name: "bulbasaur",
+      name: "Bulbasaur",
       imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+      color: "green",
     },
     {
-      name: "charmander",
+      name: "Charmander",
       imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+      color: "orange",
     },
     {
-      name: "squirtle",
+      name: "Squirtle",
       imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+      color: "blue",
     },
     {
-      name: "pikachu",
+      name: "Pikachu",
       imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+      color: "yellow",
     },
     {
-      name: "mew",
+      name: "Mew",
+      color: "violet",
     },
   ];
 
@@ -40,8 +45,9 @@ function App() {
 
   return (
     <div>
+      <h1>Le Pokedex de Boivinos</h1>
+      <NavBar setPokemon={setPokemon} pokemonList={pokemonList} />
       <PokemonCard pokemon={pokemonList[pokemonInd]} />
-      <NavBar pokemonInd={pokemonInd} setPokemon={setPokemon} pokemonList={pokemonList} />
     </div>
 
   )

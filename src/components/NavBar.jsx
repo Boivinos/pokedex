@@ -1,7 +1,13 @@
 import "./NavBar.css";
+import { useEffect } from "react";
 
 const NavBar = (props) => {
-    const boutPok = (el) => { props.setPokemon(props.pokemonList.indexOf(el)) }
+    const boutPok = (el) => {
+        props.setPokemon(props.pokemonList.indexOf(el))
+        if (el.name == "Pikachu") { alert(el.phrase) }
+    }
+
+
 
     return (
         <div className="Navbar">

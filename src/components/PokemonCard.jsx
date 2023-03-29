@@ -1,10 +1,14 @@
 import PropTypes from "prop-types";
 import "./PokemonCard.css";
 
+
 function PokemonCard(props) {
     const pokemon = props.pokemon;
     const src = pokemon.imgSrc
-    return src != undefined ?
+
+
+
+    return (
         <figure style={{
             background: pokemon.color,
             borderRadius: "20px",
@@ -14,17 +18,8 @@ function PokemonCard(props) {
                 color: pokemon.color,
                 backgroundColor: "white",
             }}>{pokemon.name}</span></figcaption>
-        </figure> :
-        <figure style={{
-            background: pokemon.color
-        }}>
-            <p>???</p>
-            <figcaption >Le pokemon est <span style={{
-                color: pokemon.color,
-                backgroundColor: "white",
-            }}>{pokemon.name}</span> </figcaption>
         </figure>
-
+    )
 }
 
 PokemonCard.propTypes = {

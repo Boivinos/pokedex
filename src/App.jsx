@@ -3,7 +3,7 @@ import PokemonCard from "./components/PokemonCard"
 import { useState } from "react";
 import "./App.css"
 import NavBar from "./components/NavBar";
-
+import { useEffect } from "react";
 
 
 function App() {
@@ -32,16 +32,23 @@ function App() {
       imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
       color: "yellow",
+      phrase: "pika pika !!!!",
     },
     {
       name: "Mew",
-      color: "violet",
+      imgSrc: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/151.png",
+      color: "pink",
     },
   ];
 
   const [pokemonInd, setPokemon] = useState(0);
 
-
+  useEffect(
+    () => {
+      alert("Welcome in this amazing world, this is an automatic message !!!");
+    },
+    []
+  );
 
   return (
     <div>
